@@ -82,18 +82,22 @@ class TestUrbanRoutes:
     def test_add_icecream_button(self):
         routes_page = UrbanRoutesPage(self.driver)
         routes_page.click_add_icecream_button()
-        assert routes_page.driver.find_element(*routes_page.add_icecream_button).is_selected()
+        assert self.driver.find_element(*routes_page.add_icecream_button).text == '2'
 
     #Prueba 8: Aparece el modal para buscar un taxi
     @pytest.mark.sleep(5)
     def test_final_taxi_button(self):
         routes_page = UrbanRoutesPage(self.driver)
         routes_page.click_final_taxi_button()
+        assert self.driver.find_element(*routes_page.final_taxi_button).is_displayed()
+
 
     #Prueba 9: Esperar a que aparezca la información del conductor en el modal
-    def test_wait_driver_info(self):
+
+    def test_driver_info(self):
         # Espera 60 segundos antes de realizar la verificación
         time.sleep(60)
+
 
     @classmethod
     def teardown_class(cls):

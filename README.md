@@ -40,7 +40,7 @@
 <ul>
 <li>main.py: Contiene las pruebas de clase y funcionalidad.</li>
 <li>data.py: Almacena los datos para las pruebas. </li>
-<li>retrieve_code.py: Contiene una función que devuelve un codigo de un número de confirmación de teléfono </li>
+<li>utility.py: Contiene una función que devuelve un codigo de un número de confirmación de teléfono </li>
 <li>Urban_Routes_Page: Contiene los localizadores y métodos necesarios en la clase </li>
 </ul>
 

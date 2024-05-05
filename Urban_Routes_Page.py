@@ -1,43 +1,40 @@
 import data
-from retrieve_code import retrieve_phone_code
+from utility import retrieve_phone_code
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions
 
 class UrbanRoutesPage:
-    #Paso 1
     from_field = (By.ID, 'from')
     to_field = (By.ID, 'to')
-    #Paso 2
+    # Paso 2
     taxi_button = (By.XPATH, "//button[text()='Pedir un taxi']")
     comfort_button = (By.XPATH, "(//div[text()='Comfort'])[1]")
     comfort_button_container = (By.XPATH, "//div[@class='tcard active']")
-    #Paso 3
+    # Paso 3
     phone_field_button = (By.XPATH, "//div[text()= 'Número de teléfono']")
     phone_box_field = (By.ID, 'phone')
     phone_box_button = (By.XPATH, "(//button[@type='submit'])[1]")
     code_field = (By.ID, 'code')
     code_confirm_button = (By.XPATH, "(//button[@type='submit'])[2]")
-    #Paso 4
-    payment_method = (By.XPATH, "(//div[text()='Método de pago'])[2]") #metodo de pago
-    add_payment_card = (By.XPATH, "//div[@class='pp-plus-container']//img[1]") #caja de pago - agregar tarjeta
-    credit_card_field = (By.ID, 'number') #ingresar numero de tarjeta
-    credit_card_code = (By.XPATH, "(//input[@id='code'])[2]") #ingresar codigo de tarjeta
-    confirm_credit_card_button = (By.XPATH, "//button[text()='Agregar']") #ingresar datos de tarjeta
-    payment_box_close = (By.XPATH, "(//button[@class='close-button section-close'][3]") #cerrar caja de pago
-    payment_method_selected = (By.CLASS_NAME, 'pp-value-text')#validación
-    #Paso 5
+    # Paso 4
+    payment_method = (By.XPATH, "(//div[text()='Método de pago'])[2]")  # metodo de pago
+    add_payment_card = (By.XPATH, "//div[@class='pp-plus-container']//img[1]")  # caja de pago - agregar tarjeta
+    credit_card_field = (By.ID, 'number')  # ingresar numero de tarjeta
+    credit_card_code = (By.XPATH, "(//input[@id='code'])[2]")  # ingresar codigo de tarjeta
+    confirm_credit_card_button = (By.XPATH, "//button[text()='Agregar']")  # ingresar datos de tarjeta
+    payment_box_close = (By.XPATH, "(//button[@class='close-button section-close'])[3]")  # cerrar caja de pago
+    payment_method_selected = (By.CLASS_NAME, 'pp-value-text')  # validación
+    # Paso 5
     message_driver = (By.ID, 'comment')
-    #Paso 6
+    # Paso 6
     blankets_and_tissues_button = (By.XPATH, "(//span[@class='slider round'])[1]")
     blankets_and_tissues_checkbox = (By.CSS_SELECTOR, "div.r-sw-container input.switch-input")
-    #Paso 7
+    # Paso 7
     add_icecream_button = (By.XPATH, "(//div[@class='counter-plus'])[1]")
-    #Paso 8
+    # Paso 8
     final_taxi_button = (By.XPATH, "(//button[@type='button']//span)[1]")
-    #Paso 9
-    wait_driver_info = (By.XPATH,"(//div[@class='order-button'])[1]")
+    # Paso 9
+    wait_driver_info = (By.XPATH, "(//div[@class='order-button'])[1]")
 
     def __init__(self, driver):
         self.driver = driver
@@ -118,6 +115,9 @@ class UrbanRoutesPage:
         for button in add_icecream_buttons:
             button.click()
             button.click()
+
     def click_final_taxi_button(self):
         self.driver.find_element(*self.final_taxi_button).click()
+
+
 
